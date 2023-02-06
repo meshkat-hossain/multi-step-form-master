@@ -3,7 +3,8 @@ import React from "react"
 const PersonalInfo = ({
   handleInputChange,
   formErrors,
-  runValidation
+  runValidation,
+  formValues
 }) => {
 
    
@@ -13,6 +14,7 @@ const PersonalInfo = ({
       <p className='info'>
         Please provide your name, email address, and phone number
       </p>
+      
       <article className='label-and-error'>
         <label htmlFor='name'>Name</label>
         <p style={{ fontSize: "12px", color: "red", marginTop: "2px" }}>
@@ -26,6 +28,7 @@ const PersonalInfo = ({
         placeholder='e.g. Stephen King'
         onChange={handleInputChange}
         onBlur={runValidation}
+        value={formValues.name}
       />
 
 
@@ -42,6 +45,7 @@ const PersonalInfo = ({
         placeholder='e.g. stephenking@lorem.com'
         onChange={handleInputChange}
         onBlur={runValidation}
+        value={formValues.email}
       />
       <article className='label-and-error'>
         <label htmlFor='tel'>Phone Number</label>
@@ -56,6 +60,7 @@ const PersonalInfo = ({
         placeholder='e.g. +1 234 567 890'
         onChange={handleInputChange}
         onBlur={runValidation}
+        value={formValues.phone}
       />
     </div>
   )
